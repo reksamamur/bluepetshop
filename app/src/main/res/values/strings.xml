@@ -16,12 +16,13 @@
     <string name="code_reptile">reptile</string>
     <string name="code_sugar_glider">sugar</string>
     <string name="error_empty">Empty, please fill the form</string>
-    <string name="error_lesssix">only 6? really WACK</string>
+    <string name="error_lesssix">Must more than 6</string>
     <string name="adoption">Adoption</string>
 
     <string name="al_empty">Empty</string>
     <string name="al_lessten">Oh no</string>
     <string name="al_lessten_msg">You must input more than 10 number</string>
+    <string name="al_lessten_msg_notdigit">You must input number</string>
 
     <string name="al_success">Success</string>
     <string name="al_success_msg">Congratulation now you can adopt this pet</string>

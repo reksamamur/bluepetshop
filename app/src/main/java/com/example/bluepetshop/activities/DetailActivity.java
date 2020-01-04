@@ -4,11 +4,15 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -26,6 +30,8 @@ public class DetailActivity extends AppCompatActivity {
 
     Toolbar toolbar;
     Bundle bundle;
+
+    String TAG = getClass().getSimpleName();
 
     TextView textViewName, textViewAge, textViewGender, textViewRace;
     TextInputEditText textInputEditTextPhone;
@@ -70,7 +76,7 @@ public class DetailActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (textInputEditTextPhone.getText().length() < 10){
+                if (textInputEditTextPhone.getText().length() <= 10){
                     textInputLayout.setBoxStrokeColor(getResources().getColor(R.color.colorRed));
                     textInputLayout.setHintTextColor(ColorStateList.valueOf(getResources().getColor(R.color.colorRed)));
                 }
@@ -78,7 +84,7 @@ public class DetailActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (textInputEditTextPhone.getText().length() > 10){
+                if (textInputEditTextPhone.getText().length() >= 10){
                     textInputLayout.setBoxStrokeColor(getResources().getColor(R.color.colorPrimary));
                     textInputLayout.setHintTextColor(ColorStateList.valueOf(getResources().getColor(R.color.colorPrimary)));
                 }
@@ -87,16 +93,19 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     void checkPhoneNum() {
+
         buttonAdoptD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String phone = String.valueOf(textInputEditTextPhone.getText());
-
+                boolean isDigit = TextUtils.isDigitsOnly(phone);
                 if (phone.isEmpty()) {
                     alertDialog.defaultAlert(getResources().getString(R.string.al_empty), getResources().getString(R.string.error_empty), DetailActivity.this);
                 } else if (phone.length() < 10) {
                     alertDialog.defaultAlert(getResources().getString(R.string.al_lessten), getResources().getString(R.string.al_lessten_msg), DetailActivity.this);
-                } else {
+                } else if (!isDigit){
+                    alertDialog.defaultAlert(getResources().getString(R.string.al_lessten), getResources().getString(R.string.al_lessten_msg_notdigit), DetailActivity.this);
+                }else {
                     alertDialog.directAlert(getResources().getString(R.string.al_success), getResources().getString(R.string.al_success_msg), DetailActivity.this, new ItemActivity());
                 }
 

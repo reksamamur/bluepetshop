@@ -36,6 +36,7 @@ public class AlertDialog{
                     public void onClick(DialogInterface dialog, int which) {
                         context.startActivity(new Intent(context, activity.getClass()));
                         dialog.dismiss();
+                        ((Activity) context).finish();
                     }
                 });
 

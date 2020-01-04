@@ -31,14 +31,11 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     void checkUsername() {
-        sharedPreferences = this.getSharedPreferences("UsernameBluepet", Context.MODE_PRIVATE);
+//        sharedPreferences = this.getSharedPreferences("UsernameBluepet", Context.MODE_PRIVATE);
         String username = sharedPreferences.getString("username", "missing");
         if (username.equals("missing")) {
-            /*Intent intent = new Intent(this, LoginActivity.class);
-            startActivity(intent);*/
         } else {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+            startActivity(new Intent(this, MainActivity.class));
             finish();
         }
     }
@@ -84,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
                 String password = String.valueOf(inputPassword.getText());
                 if (username.isEmpty() || password.isEmpty()) {
                     setupError(getResources().getString(R.string.error_empty), 0);
-                } else if (username.length() < 6 || password.length() < 6) {
+                } else if (username.length() <= 6 || password.length() <= 6) {
                     setupError(getResources().getString(R.string.error_lesssix), 0);
                 } else {
                     setupError("", 8);
