@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Blue Pet Shop</string>
+    <string name="signin">Sign in</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="welcome">Welcome</string>
+    <string name="want_to_have_a_pet">Want to have a pet?</string>
+    <string name="adopt_now">Adopt now</string>
+    <string name="recommend">Recommend</string>
+    <string name="dog">Dog</string>
+    <string name="cat">Cat</string>
+    <string name="reptile">Reptile</string>
+    <string name="sugar_glider">Sugar Glider</string>
+    <string name="code_dog">dog</string>
+    <string name="code_cat">cat</string>
+    <string name="code_reptile">reptile</string>
+    <string name="code_sugar_glider">sugar</string>
+    <string name="error_empty">Empty, please fill the form</string>
+    <string name="error_lesssix">only 6? really WACK</string>
+    <string name="adoption">Adoption</string>
+
+    <string name="al_empty">Empty</string>
+    <string name="al_lessten">Oh no</string>
+    <string name="al_lessten_msg">You must input more than 10 number</string>
+
+    <string name="al_success">Success</string>
+    <string name="al_success_msg">Congratulation now you can adopt this pet</string>
+    <!-- ABout us section -->
+    <string name="aboutus">isi about us disini</string>
+    <string name="phone_number">Phone number</string>
+</resources>
