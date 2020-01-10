@@ -27,6 +27,6 @@
     <string name="al_success">Success</string>
     <string name="al_success_msg">Congratulation now you can adopt this pet</string>
     <!-- ABout us section -->
-    <string name="aboutus">isi about us disini</string>
+    <string name="aboutus">KD Petshop is an android application to find and adopt pet. Kevin Krisna as a CEO of Petshop want to create an applications based on Mobile to easier pet lover for finding and adopting pet.</string>
     <string name="phone_number">Phone number</string>
 </resources>
